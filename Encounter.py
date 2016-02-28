@@ -32,40 +32,32 @@ def encounter():
 
 def encounter_warrior():
     Enemy.create_warrior()
-	encounter()
+    encounter()
 	
 def encounter_mage():
     Enemy.create_mage()
-	encounter()
+    encounter()
 	
 def encounter_archer():
     Enemy.create_archer()
-	encounter()
+    encounter()
 	
 def encounter_thief():
     Enemy.create_thief()
-	encounter()
+    encounter()
 	
 def encounter_bard():
     Enemy.create_bard()
-	encounter()
+    encounter()
 	
 def encounter_pawn():
     Enemy.create_pawn()
-	encounter()
+    encounter()
 
 def encounter_random():
 
 def encounter_attack():
-	decision = raw_input("How would you like to proceed (Attack/Magic/Ranged/Steal/Sing/Run)? ")
-    if decision == 'Attack':
-        
-    elif decision == 'Magic':
-    elif decision == 'Ranged':
-    elif decision == 'Steal':
-    elif decision == 'Sing':
-    elif decision == 'Run':
-    else: 
+    
 
 def encounter_magic():
 
