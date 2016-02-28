@@ -3,9 +3,10 @@ import Character
 import Enemy
 
 possible_archetype = ["Warrior", "Mage", "Thief", "Bard", "Archer", "Pawn"]
+actions = ["Attack","Magic","Ranged","Steal","Sing","Run"]
 
 def encounter():
-    decision = raw_input("How would you like to proceed (Attack/Magic/Ranged/Steal/Sing/Run)? ")
+    decision = raw_input("How would you like to proceed ("+actions+")? ")
     if decision == 'Attack':
         #Character Strength and Endurance Rolls vs Enemy Strength and Endurance Rolls
         encounter_attack()
