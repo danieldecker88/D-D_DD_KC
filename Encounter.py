@@ -1,3 +1,4 @@
+import sys
 import random 
 import Character
 import Enemy
@@ -58,9 +59,34 @@ def encounter_pawn():
 def encounter_random():
 
 def encounter_attack():
+    #Define Player Roll
+    print Character.attributes
+    player_attack = Character.attributes[key][0] + Character.attributes[key][1]
+    player_roll = player_attack * random.randrange(1,6,1)
     
+    #Define Enemy Roll
+    print Enemy.attributes
+    enemy_attack = Enemy.attributes[key][0] + Enemy.attributes[key][1]
+    enemy_roll = enemy_attack * random.randrange(1,6,1)
+    
+    #Define Winner
+    if player_roll > enemy_roll:
+    	print "Enemy defeated"
+    	return
+    elif player_roll < enemy_roll:
+    	print "Enemy wins. Game Over."
+    	sys.kill()
+    elif player_roll = enemy_roll:
+    	print "It's a tie. Try Again."
+    	encounter()
+    else:
+    	print "Error with commands or inputs"
+    	sys.kill()
 
 def encounter_magic():
+	
+	
+def encounter_ranged():
 
 
 def encounter_steal():
