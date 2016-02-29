@@ -78,6 +78,8 @@ class Character:
 
     def print_attributes(self):
         print "Attributes:\n"
+        for line in attributes: 
+            print attributes
         
         
         
