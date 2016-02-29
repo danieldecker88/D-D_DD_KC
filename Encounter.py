@@ -74,6 +74,113 @@ def encounter_attack():
     	print "Enemy defeated"
     	return
     elif player_roll < enemy_roll:
+    	print "Enemy has defeated you. Game Over."
+    	sys.kill()
+    elif player_roll = enemy_roll:
+    	print "You were blocked. Try Again."
+    	encounter()
+    else:
+    	print "Error with commands or inputs"
+    	sys.kill()
+
+def encounter_magic():
+    #Define Player Roll
+    print Character.attributes
+    player_attack = Character.attributes[key][0] + Character.attributes[key][1]
+    player_roll = player_attack * random.randrange(1,6,1)
+    
+    #Define Enemy Roll
+    print Enemy.attributes
+    enemy_attack = Enemy.attributes[key][0] + Enemy.attributes[key][1]
+    enemy_roll = enemy_attack * random.randrange(1,6,1)
+    
+    #Define Winner
+    if player_roll > enemy_roll:
+    	print "Enemy defeated by spell."
+    	return
+    elif player_roll < enemy_roll:
+    	print "Spell failed. Enemy defeats you. Game Over."
+    	sys.kill()
+    elif player_roll = enemy_roll:
+    	print "Your spell was absorbed. Try Again."
+    	encounter()
+    else:
+    	print "Error with commands or inputs"
+    	sys.kill()
+	
+def encounter_ranged():
+    #Define Player Roll
+    print Character.attributes
+    player_attack = Character.attributes[key][0] + Character.attributes[key][1]
+    player_roll = player_attack * random.randrange(1,6,1)
+    
+    #Define Enemy Roll
+    print Enemy.attributes
+    enemy_attack = Enemy.attributes[key][0] + Enemy.attributes[key][1]
+    enemy_roll = enemy_attack * random.randrange(1,6,1)
+    
+    #Define Winner
+    if player_roll > enemy_roll:
+    	print "Enemy defeated"
+    	return
+    elif player_roll < enemy_roll:
+    	print "You were shot. Enemy wins. Game Over."
+    	sys.kill()
+    elif player_roll = enemy_roll:
+    	print "Missed. Try Again."
+    	encounter()
+    else:
+    	print "Error with commands or inputs"
+    	sys.kill()
+
+def encounter_steal():
+    #Define Player Roll
+    print Character.attributes
+    player_attack = Character.attributes[key][0] + Character.attributes[key][1]
+    player_roll = player_attack * random.randrange(1,6,1)
+    
+    #Define Enemy Roll
+    print Enemy.attributes
+    enemy_attack = Enemy.attributes[key][0] + Enemy.attributes[key][1]
+    enemy_roll = enemy_attack * random.randrange(1,6,1)
+    
+    #Define Winner
+    if player_roll > enemy_roll:
+    	print "Succussfully stole enemy gold"
+    	return
+    elif player_roll < enemy_roll:
+    	print "You were caught and are going to jail. Game Over."
+    	sys.kill()
+    elif player_roll = enemy_roll:
+    	print "Unsuccessful. Try Again."
+    	encounter()
+    else:
+    	print "Error with commands or inputs"
+    	sys.kill()
+
+
+def encounter_sing():
+    #Define Player Roll
+    print Character.attributes
+    player_attack = Character.attributes[key][0] + Character.attributes[key][1]
+    player_roll = player_attack * random.randrange(1,6,1)
+    
+    #Define Enemy Roll
+    print Enemy.attributes
+    enemy_attack = Enemy.attributes[key][0] + Enemy.attributes[key][1]
+    enemy_roll = enemy_attack * random.randrange(1,6,1)
+    
+    #Define Winner
+    if player_roll > enemy_roll:
+    	print "Enemy fell asleep. You can escape or take advantage of him."
+    	print "We won't judge."
+    	choice = raw_input("What are you going to do (run away or take advantage)? ")
+    	if choice.lower == 'take advantage':
+    	    print "You sicko"
+    	else:
+    	    print "You're probably a woman anyway."
+    	return
+    elif player_roll < enemy_roll:
     	print "Enemy wins. Game Over."
     	sys.kill()
     elif player_roll = enemy_roll:
@@ -82,19 +189,6 @@ def encounter_attack():
     else:
     	print "Error with commands or inputs"
     	sys.kill()
-
-def encounter_magic():
-	
-	
-def encounter_ranged():
-
-
-def encounter_steal():
-
-
-
-def encounter_sing():
-
 
 
 def encounter_run():
