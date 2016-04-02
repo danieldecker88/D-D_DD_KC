@@ -11,8 +11,8 @@ class Character:
         attributes[key] = 0
     #skills
 
-    possible_races = ["Human", "Elf", "Dwarf", "Orc", "Asian"]
-    possible_archetypes = ["Warrior", "Mage", "Thief", "Bard", "Jew"]
+    possible_races = ["Human", "Elf", "Dwarf", "Orc", "Cyborg"]
+    possible_archetypes = ["Warrior", "Mage", "Thief", "Bard", "Archer"]
     
 
     #Helper
@@ -21,6 +21,11 @@ class Character:
     #Methods
     def __init__(self):
         self.name = raw_input ("Name: ")
+        areyousure = raw_input ("Are you sure? (Y/N)")
+        if areyousure == 'Y':
+            print "Ok, I'll call you "+ self.name
+        else:
+            self.name = raw_input("Name: ")
         while self.gender != "M" and self.gender != "F" and self.gender != "T":
             self.gender = raw_input ("Gender(M/F/T): ")
 
@@ -38,31 +43,28 @@ class Character:
                 print race
             self.race = raw_input ("Race: ")
 
-        while self.legal_character == 'False':
+        if self.legal_character == False:
             self.attributes = self.get_attributes()
-            
-            
+        else: 
+            print self.legal_character
+            print "something is wrong"
 
-            
-        #self.skills = raw_input ("skills: ")
-        
 
     def print_char_sheet(self):
-        print("##### D&D Character Sheet #####")
+        print '\n'
+        print '\n'
+        print("########## D&D Character Sheet ##########")
         print "Name: "+self.name
         print "Gender: "+self.gender
         print "Archetype: "+self.archetype
-        #print "Hair_Color: "+self.hair_color
-        #print "Eye_color: "+self.eye_color
         print "Race: "+self.race
-        #print "Skin_Color: "+self.skin_color
         self.print_attributes()
-        #print "Skills: "+self.skills
 
     def get_attributes(self):
         print "Selct the value of your attributes"
         print self.attributes
         points = 30
+        print "Points Remaining: "+str(points)
         while points > 0 and points < 31:
             for key in self.attributes.keys():
                 print "Select the value for "+key 
@@ -75,11 +77,17 @@ class Character:
             self.get_attributes()
         else:
             self.legal_character = True
+            return self.attributes         
 
     def print_attributes(self):
         print "Attributes:\n"
-        for line in attributes: 
-            print attributes
+        from pprint import pprint
+        pprint(self.attributes)
+        print "\n"
+        
+		
+
+	        
         
         
         
